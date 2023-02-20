@@ -8,9 +8,9 @@ function getCountryValue(){
         var states = ["LasVegas", "Chicago", "Texas"]
     }
 
-    for (var i = 0; i < states.length; i++) {
+    for (var index = 0; index < states.length; index++) {
         var option = document.createElement("option");
-        option.text = states[i];
+        option.text = states[index];
         stateDropdown.add(option);
       }
 }
@@ -33,9 +33,9 @@ function getStateValue(){
         var cities = ["SpringValley", "Boulder", "Paradise", "Henderson"]
     }
 
-    for (var i = 0; i < cities.length; i++) {
+    for (var index = 0; index < cities.length; index++) {
         var option = document.createElement("option");
-        option.text = cities[i];
+        option.text = cities[index];
         cityDropdown.add(option);
       }
 }
