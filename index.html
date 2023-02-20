@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="data_adding.js"></script>
+<style>
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      tr:nth-child(even) {
+        background-color: black;
+        color:white;
+      }
+</style>
+</head>
+<body>
+    <div id="mainform" style="background-color:black;color:white;border-radius:10px;border: 1px solid black; padding: 20px;width:320px;margin:auto;display:flex;justify-content:space-evenly">
+        <form id="myForm">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"></br></br>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email"></br></br>
+                <!-- Radio For Gender -->
+                <label for="gender">Gender:</label>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br></br>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age"></br></br>
+
+                 <!-- CheckBox For Hobbies -->
+                <label for="hobbies">Hobbies:</label>
+                <input type="checkbox" id="hobbies1" name="hobbies" value="Reading">
+                <label for="hobbies1"> Reading</label>
+                <input type="checkbox" id="hobbies2" name="hobbies" value="Travelling">
+                <label for="hobbies2"> Travelling</label>
+                <input type="checkbox" id="hobbies3" name="hobbies" value="Sports">
+                <label for="hobbies3"> Sports</label></br></br>
+
+                <label for="country">Country:</label>
+                <select id="country" name="country" onchange="getCountryValue()">
+                    <option value="india">India</option>
+                    <option value="usa">USA</option>
+                 </select></br></br>
+
+                <label for="states">State:</label>
+                <select id="states" name="states" onchange="getStateValue()">
+                    <option value="">states</option>
+                 </select></br></br>
+
+                <label for="city">City:</label>
+                <select id="city" name="city">
+                    <option value="">city</option>
+                 </select></br></br>
+                <div style = "
+                        border-radius: 65%;
+                        border-background: black;
+                        display: flex;
+                        justify-content: space-evenly;">
+                        <button id="button1" onclick="addData()" type="button">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <h1 style="padding-top: 30px;
+    display: flex;
+    justify-content: center">Table Data</h2>
+    <table style="font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;">
+        <tr style="background-color:black;color:white;">
+            <th>Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Hobbies</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>City</th>
+        </tr>
+        <tbody id="myTable">
+        </tbody>
+    </table>
+</body>
+</html>
