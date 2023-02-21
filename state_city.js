@@ -21,7 +21,7 @@ function addOption(dropdown, array){
   return dropdown;
 }
 function getCountryValue(){
-    let country_dropdown = document.getElementById("country").value;
+    let country_dropdown = document.getElementById("country").value.toLowerCase();
     var state_dropdown = document.getElementById("states");
     state_dropdown.innerHTML = ""
     if (COUNTRY_STATE_CITY_DD.hasOwnProperty(country_dropdown)){
@@ -31,7 +31,7 @@ function getCountryValue(){
 }
 
 function getStateValue(){
-    let country_dropdown = document.getElementById("country").value;
+    let country_dropdown = document.getElementById("country").value.toLowerCase();
     let state_dropdown = document.getElementById("states").value.toLowerCase();
     var city_dropdown = document.getElementById("city");
     city_dropdown.innerHTML = ""
