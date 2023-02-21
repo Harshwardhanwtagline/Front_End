@@ -1,69 +1,25 @@
-const COUNTRY_STATE_CITY_DD = { 
-    "india": {
-      "gujarat": ["Surat", "Rajkot", "Jamnagar", "Vadodara"],
-      "up": ["Kanpur", "Agra", "Noida", "Saharanpur"],
-      "dehli": ["Gokalpuri", "New-Dehli", "Mandoli", "Taj-Pul"]
-    },
-    "usa": { 
-      "texas": ["Austin", "SanAntonio", "Dallas", "Houston"],
-      "chicago": ["Lyons", "ForestPark", "RiverForest", "Lincolnwood"],
-      "lasVegas": ["SpringValley", "Boulder", "Paradise", "Henderson"]
-    }
-  };
-function getCountryValue(){
-    let countryDropdown = document.getElementById("country").value;
-    var stateDropdown = document.getElementById("states");
-    stateDropdown.innerHTML = ""
-    if (data.hasOwnProperty(countryDropdown)){
-        var states = Object.keys(COUNTRY_STATE_CITY_DD[countryDropdown]);
-    }
-    for (var index = 0; index < states.length; index++) {
-        var option = document.createElement("option");
-        option.text = states[index].toUpperCase();
-        stateDropdown.add(option);
-      }
-}
-
-function getStateValue(){
-    let countryDropdown = document.getElementById("country").value;
-    let stateDropdown = document.getElementById("states").value.toLowerCase();
-    var cityDropdown = document.getElementById("city");
-    cityDropdown.innerHTML = ""
-
-    if (data[countryDropdown].hasOwnProperty(stateDropdown)){
-        var cities = data[countryDropdown][stateDropdown];
-    };
-
-    for (var index = 0; index < cities.length; index++) {
-        var option = document.createElement("option");
-        option.text = cities[index].toUpperCase();
-        cityDropdown.add(option);
-      }
-}
 
 function getSelectedRadio(){
-    var radios = document.getElementsByName("gender");
-    for (var i = 0; i < radios.length; i++){
-        if (radios[i].checked) {
-            return radios[i].value;
+    let radios = document.getElementsByName("gender");
+    for (let index = 0; index < radios.length; index++){
+        if (radios[index].checked) {
+            return radios[index].value;
             }
         }
     }
 function getSelectedCheckboxes() {
-    var checkboxes = document.getElementsByName("hobbies");
-    var selected = [];
-    for (var i = 0; i < checkboxes.length; i++) {
-        if (checkboxes[i].checked) {
-            selected.push(checkboxes[i].value);
+    let checkboxes = document.getElementsByName("hobbies");
+    let selected = [];
+    for (let index = 0; index < checkboxes.length; index++) {
+        if (checkboxes[index].checked) {
+            selected.push(checkboxes[index].value);
         }
-        }
+    }
     return selected;
     }
-const person_data = [{"name": "Harsh", "mail":"Hvwaghela@", "gender":"male", "hobbies": ["sports"], "country":"india", "state":"gujarat", "city":"surat"}, 
-        {"name": "Harry", "mail":"Harrywaghela@", "gender":"male", "hobbies": ["sports", "Reading"], "country":"india", "state":"gujarat", "city":"surat"}] 
 
 function addData(){
-    let name, email, country, hobbies, states, city;
+    let name, email, country, hobbies, states, city, new_table_data;
     name =  document.getElementById("name").value;
     email =  document.getElementById("email").value;
     gender = getSelectedRadio();
@@ -72,13 +28,14 @@ function addData(){
     states = document.getElementById("states").value;
     city = document.getElementById("city").value;
 
-    console.log(name, email, gender, hobbies, country, states, city)
+    // I have stored data in CURR_OBJ_DATA so that i can push it in PERSONS_DD.
+    const USER_INPUT_DATA = {"name": name, "mail":email, "gender":gender, "hobbies": hobbies, "country":country, "state":states, "city":city}
+    PERSONS_DD.push(USER_INPUT_DATA)
 
-}
-window.onload = function(){
-    for(let data of person_data){
-        let table = document.getElementById("myTable");
-        let newRow = `<tr><td>${data["name"]}</td><td>${data["mail"]}</td><td>${data["gender"]}</td><td>${data["hobbies"]}</td><td>${data["country"]}</td><td>${data["state"]}</td><td>${data["city"]}</td></tr>`;
-        table.insertAdjacentHTML("beforeend", newRow);
-    }
+    // i have created new_table_data template string so that i can insert in table.
+    new_table_data = `<tr><td>${USER_INPUT_DATA["name"]}</td><td>${USER_INPUT_DATA["mail"]}</td><td>${USER_INPUT_DATA["gender"]}</td><td>${USER_INPUT_DATA["hobbies"]}</td><td>${USER_INPUT_DATA["country"]}</td><td>${USER_INPUT_DATA["state"]}</td><td>${USER_INPUT_DATA["city"]}</td></tr>`;
+    table.insertAdjacentHTML("beforeend", new_table_data);
+    
+    // clearing input data from form using reset() , after the data is display to the table 
+    document.querySelector('#myForm').reset();
 }
