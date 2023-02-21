@@ -13,16 +13,17 @@ const COUNTRY_STATE_CITY_DD = {
   };
 
 function addOption(dropdown, array){
-  for (var index = 0; index < array.length; index++) {
-    var option = document.createElement("option");
+  for (let index = 0; index < array.length; index++) {
+    let option = document.createElement("option");
     option.text = array[index].toUpperCase();
     dropdown.add(option);
   }
   return dropdown;
 }
+
 function getCountryValue(){
     let country_dropdown = document.getElementById("country").value.toLowerCase();
-    var state_dropdown = document.getElementById("states");
+    let state_dropdown = document.getElementById("states");
     state_dropdown.innerHTML = ""
     if (COUNTRY_STATE_CITY_DD.hasOwnProperty(country_dropdown)){
         var states = Object.keys(COUNTRY_STATE_CITY_DD[country_dropdown]);
@@ -33,7 +34,7 @@ function getCountryValue(){
 function getStateValue(){
     let country_dropdown = document.getElementById("country").value.toLowerCase();
     let state_dropdown = document.getElementById("states").value.toLowerCase();
-    var city_dropdown = document.getElementById("city");
+    let city_dropdown = document.getElementById("city");
     city_dropdown.innerHTML = ""
 
     if (COUNTRY_STATE_CITY_DD[country_dropdown].hasOwnProperty(state_dropdown)){
