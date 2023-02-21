@@ -2,7 +2,6 @@
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="table.js"></script>
 <style>
     td, th {
         border: 1px solid #dddddd;
@@ -43,24 +42,19 @@
                 <label for="hobbies3"> Sports</label></br></br>
 
                 <label for="country">Country:</label>
-                <select id="country" name="country">
-                    <option value="india">India</option>
-                    <option value="usa">USA</option>
-                    <option value="russia">Russia</option>
+                <select id="country" name="country" onchange="getCountryValue()">
+                    <option value="INDIA">INDIA</option>
+                    <option value="USA">USA</option>
                  </select></br></br>
     
-                <label for="state">State:</label>
-                <select id="state" name="state">
-                    <option value="gujarat">Gujarat</option>
-                    <option value="dehli">Dehli</option>
-                    <option value="up">UP</option>
+                <label for="states">State:</label>
+                <select id="states" name="states" onchange="getStateValue()">
+                    <option value="">states</option>
                  </select></br></br>
 
                 <label for="city">City:</label>
                 <select id="city" name="city">
-                    <option value="surat">Surat</option>
-                    <option value="ahmedabad">Ahmedabad</option>
-                    <option value="bharuch">Bharuch</option>
+                    <option value="">city</option>
                  </select></br></br>
                 <div style = "
                         border-radius: 65%;
@@ -90,5 +84,9 @@
         <tbody id="myTable">
         </tbody>
     </table>
+    <script src="state_city.js"></script>
+    <script src="table.js"></script>
+</body>
+</html>
 </body>
 </html>
