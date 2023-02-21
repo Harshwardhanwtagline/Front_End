@@ -1,41 +1,42 @@
+const COUNTRY_STATE_CITY_DD = { 
+    "india": {
+      "gujarat": ["Surat", "Rajkot", "Jamnagar", "Vadodara"],
+      "up": ["Kanpur", "Agra", "Noida", "Saharanpur"],
+      "dehli": ["Gokalpuri", "New-Dehli", "Mandoli", "Taj-Pul"]
+    },
+    "usa": { 
+      "texas": ["Austin", "SanAntonio", "Dallas", "Houston"],
+      "chicago": ["Lyons", "ForestPark", "RiverForest", "Lincolnwood"],
+      "lasVegas": ["SpringValley", "Boulder", "Paradise", "Henderson"]
+    }
+  };
 function getCountryValue(){
     let countryDropdown = document.getElementById("country").value;
     var stateDropdown = document.getElementById("states");
     stateDropdown.innerHTML = ""
-    if(countryDropdown.toLowerCase()=="india"){
-        var states = ["Gujarat", "UP", "Dehli"]
-    }else if(countryDropdown.toLowerCase()=="usa"){
-        var states = ["LasVegas", "Chicago", "Texas"]
+    if (data.hasOwnProperty(countryDropdown)){
+        var states = Object.keys(COUNTRY_STATE_CITY_DD[countryDropdown]);
     }
-
     for (var index = 0; index < states.length; index++) {
         var option = document.createElement("option");
-        option.text = states[index];
+        option.text = states[index].toUpperCase();
         stateDropdown.add(option);
       }
 }
 
 function getStateValue(){
-    let stateDropdown = document.getElementById("states").value;
+    let countryDropdown = document.getElementById("country").value;
+    let stateDropdown = document.getElementById("states").value.toLowerCase();
     var cityDropdown = document.getElementById("city");
     cityDropdown.innerHTML = ""
-    if (stateDropdown.toLowerCase()=="gujarat"){
-        var cities = ["Surat", "Rajkot", "Jamnagar", "Vadodara"]
-    }else if(stateDropdown.toLowerCase()=="dehli"){
-        var cities = ["Gokalpuri", "New-Dehli", "Mandoli", "Taj-Pul"]
-    }else if(stateDropdown.toLowerCase()=="up"){
-        var cities = ["Kanpur", "Agra", "Noida", "Saharanpur"]
-    }else if (stateDropdown.toLowerCase()=="chicago"){
-        var cities = ["Lyons", "ForestPark", "RiverForest", "Lincolnwood"]
-    }else if (stateDropdown.toLowerCase()=="texas"){
-        var cities = ["Austin", "SanAntonio", "Dallas", "Houston"]
-    }else if (stateDropdown.toLowerCase()=="lasvegas"){
-        var cities = ["SpringValley", "Boulder", "Paradise", "Henderson"]
-    }
+
+    if (data[countryDropdown].hasOwnProperty(stateDropdown)){
+        var cities = data[countryDropdown][stateDropdown];
+    };
 
     for (var index = 0; index < cities.length; index++) {
         var option = document.createElement("option");
-        option.text = cities[index];
+        option.text = cities[index].toUpperCase();
         cityDropdown.add(option);
       }
 }
@@ -63,13 +64,13 @@ const person_data = [{"name": "Harsh", "mail":"Hvwaghela@", "gender":"male", "ho
 
 function addData(){
     let name, email, country, hobbies, states, city;
-    name =  getElementById("name").value;
-    email =  getElementById("email").value;
+    name =  document.getElementById("name").value;
+    email =  document.getElementById("email").value;
     gender = getSelectedRadio();
     hobbies = getSelectedCheckboxes();
-    country = getElementById("country").value;
-    states = getElementById("states").value;
-    city = getElementById("city").value;
+    country = document.getElementById("country").value;
+    states = document.getElementById("states").value;
+    city = document.getElementById("city").value;
 
     console.log(name, email, gender, hobbies, country, states, city)
 
