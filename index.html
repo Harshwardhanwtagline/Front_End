@@ -2,7 +2,6 @@
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="data_adding.js"></script>
 <style>
     td, th {
         border: 1px solid #dddddd;
@@ -44,10 +43,9 @@
 
                 <label for="country">Country:</label>
                 <select id="country" name="country" onchange="getCountryValue()">
-                    <option value="india">India</option>
-                    <option value="usa">USA</option>
+                    <option value="INDIA">INDIA</option>
+                    <option value="USA">USA</option>
                  </select></br></br>
-
                 <label for="states">State:</label>
                 <select id="states" name="states" onchange="getStateValue()">
                     <option value="">states</option>
@@ -62,7 +60,7 @@
                         border-background: black;
                         display: flex;
                         justify-content: space-evenly;">
-                        <button id="button1" onclick="addData()" type="button">Submit</button>
+                        <button id="button1" onclick="addData()" name="submit" type="button">Submit</button>
                 </div>
             </div>
         </form>
@@ -85,5 +83,10 @@
         <tbody id="myTable">
         </tbody>
     </table>
+    <script src="table.js"></script>
+    <script src="state_city.js"></script>
+    <script src="data_adding.js"></script>
+</body>
+</html>
 </body>
 </html>
