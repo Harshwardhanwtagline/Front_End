@@ -1,5 +1,5 @@
 
-const data = { 
+const COUNTRY_STATE_CITY_DD = { 
     "india": {
       "gujarat": ["Surat", "Rajkot", "Jamnagar", "Vadodara"],
       "up": ["Kanpur", "Agra", "Noida", "Saharanpur"],
@@ -11,33 +11,33 @@ const data = {
       "lasVegas": ["SpringValley", "Boulder", "Paradise", "Henderson"]
     }
   };
+
+function addOption(dropdown, array){
+  for (var index = 0; index < array.length; index++) {
+    var option = document.createElement("option");
+    option.text = array[index].toUpperCase();
+    dropdown.add(option);
+  }
+  return dropdown;
+}
 function getCountryValue(){
-    let countryDropdown = document.getElementById("country").value;
-    var stateDropdown = document.getElementById("states");
-    stateDropdown.innerHTML = ""
-    if (data.hasOwnProperty(countryDropdown)){
-        var states = Object.keys(data[countryDropdown]);
+    let country_dropdown = document.getElementById("country").value;
+    var state_dropdown = document.getElementById("states");
+    state_dropdown.innerHTML = ""
+    if (COUNTRY_STATE_CITY_DD.hasOwnProperty(country_dropdown)){
+        var states = Object.keys(COUNTRY_STATE_CITY_DD[country_dropdown]);
     }
-    for (var index = 0; index < states.length; index++) {
-        var option = document.createElement("option");
-        option.text = states[index].toUpperCase();
-        stateDropdown.add(option);
-      }
+    state_dropdown = addOption(state_dropdown, states);
 }
 
 function getStateValue(){
-    let countryDropdown = document.getElementById("country").value;
-    let stateDropdown = document.getElementById("states").value.toLowerCase();
-    var cityDropdown = document.getElementById("city");
-    cityDropdown.innerHTML = ""
+    let country_dropdown = document.getElementById("country").value;
+    let state_dropdown = document.getElementById("states").value.toLowerCase();
+    var city_dropdown = document.getElementById("city");
+    city_dropdown.innerHTML = ""
 
-    if (data[countryDropdown].hasOwnProperty(stateDropdown)){
-        var cities = data[countryDropdown][stateDropdown];
+    if (COUNTRY_STATE_CITY_DD[country_dropdown].hasOwnProperty(state_dropdown)){
+        var cities = COUNTRY_STATE_CITY_DD[country_dropdown][state_dropdown];
     };
-
-    for (var index = 0; index < cities.length; index++) {
-        var option = document.createElement("option");
-        option.text = cities[index].toUpperCase();
-        cityDropdown.add(option);
-      }
+    city_dropdown =  addOption(city_dropdown, cities);
 }
