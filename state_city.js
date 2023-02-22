@@ -12,18 +12,19 @@ const COUNTRY_STATE_CITY_DD = {
   };
 
 function addOption(dropdown, array){
-  for (let index = 0; index < array.length; index++) {
-    let option = document.createElement("option");
-    option.text = array[index].toUpperCase();
-    dropdown.add(option);
-  }
-  return dropdown;
+  if (typeof array != "undefined")
+    for (let index = 0; index < array.length; index++) {
+      let option = document.createElement("option");
+      option.text = array[index].toUpperCase();
+      dropdown.add(option);
+    }
+    return dropdown;
 }
 
 function getCountryValue(){
     let country_dropdown = document.getElementById("country").value.toLowerCase();
     let state_dropdown = document.getElementById("states");
-    state_dropdown.innerHTML = ""
+    state_dropdown.innerHTML = "";
     if (COUNTRY_STATE_CITY_DD.hasOwnProperty(country_dropdown)){
         var states = Object.keys(COUNTRY_STATE_CITY_DD[country_dropdown]);
     }
