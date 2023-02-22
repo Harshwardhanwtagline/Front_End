@@ -12,6 +12,10 @@
         background-color: black;
         color:white;
       }
+    span{
+        font-size:10px;
+        color:red;
+    }
 </style>
 </head>
 <body>
@@ -19,39 +23,47 @@
         <form id="myForm">
             <div>
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name"></br></br>
+                <input type="text" id="name" name="name" required>
+                <span id="nameValidationMessage"></span></br></br>
                 <label for="email">Email:</label>
-                <input type="text" id="email" name="email"></br></br>
+                <input type="text" id="email" name="email" required>
+                <span id="emailValidationMessage"></span></br></br>
                 <!-- Radio For Gender -->
                 <label for="gender">Gender:</label>
                 <input type="radio" id="male" name="gender" value="male">
                 <label for="male">Male</label>
                 <input type="radio" id="female" name="gender" value="female">
-                <label for="female">Female</label><br></br>
+                <label for="female">Female</label>
+                <span id="genderValidationMessage"></span></br></br>
 
                 <label for="age">Age:</label>
                 <input type="number" id="age" name="age"></br></br>
 
                  <!-- CheckBox For Hobbies -->
                 <label for="hobbies">Hobbies:</label>
-                <input type="checkbox" id="hobbies1" name="hobbies" value="Reading">
+                <input type="checkbox" id="hobbies1" name="hobbies" value="Reading" required>
                 <label for="hobbies1"> Reading</label>
                 <input type="checkbox" id="hobbies2" name="hobbies" value="Travelling">
                 <label for="hobbies2"> Travelling</label>
                 <input type="checkbox" id="hobbies3" name="hobbies" value="Sports">
-                <label for="hobbies3"> Sports</label></br></br>
+                <label for="hobbies3"> Sports</label>
+                <span id="hobbiesValidationMessage"></span></br></br>
 
                 <label for="country">Country:</label>
                 <select id="country" name="country" onchange="getCountryValue()">
+                    <option value="">----</option>
                     <option value="INDIA">INDIA</option>
                     <option value="USA">USA</option>
-                 </select></br></br>
+                 </select>
+                 <span id="countryValidationMessage"></span></br></br>
                 <label for="states">State:</label>
                 <select id="states" name="states" onchange="getStateValue()">
+                    <option value="">----</option>
                     <option value=""></option>
-                 </select></br></br>
+                 </select><span id="stateValidationMessage"></span></br></br>
                 <label for="city">City:</label>
                 <select id="city" name="city">
+                    <option value="">----</option>
                     <option value=""></option>
                  </select></br></br>
                 <div id="button" style = "
@@ -90,6 +102,7 @@
     <script src="state_city.js"></script>
     <script src="data_adding.js"></script>
     <script src="edit_delete.js"></script>
+    <script src="validation.js"></script>
 </body>
 </html>
 </body>
