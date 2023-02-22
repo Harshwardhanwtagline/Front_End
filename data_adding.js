@@ -17,6 +17,7 @@ function getSelectedCheckboxes() {
     return selected;
     }
 
+
 function getFormValue(){
     let name, email, age, country, hobbies, states, city;
     // getting all value from form.
@@ -28,7 +29,7 @@ function getFormValue(){
     country = document.getElementById("country").value;
     states = document.getElementById("states").value;
     city = document.getElementById("city").value;
-
+    
     // I have stored data in user input data in object and return it.
     return {"name": name, "mail":email, "age":age, "gender":gender, "hobbies": hobbies, "country":country, "state":states, "city":city}
 }

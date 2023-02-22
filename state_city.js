@@ -1,4 +1,3 @@
-
 const COUNTRY_STATE_CITY_DD = { 
     "india": {
       "gujarat": ["Surat", "Rajkot", "Jamnagar", "Vadodara"],
