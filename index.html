@@ -48,14 +48,13 @@
                  </select></br></br>
                 <label for="states">State:</label>
                 <select id="states" name="states" onchange="getStateValue()">
-                    <option value="">states</option>
+                    <option value=""></option>
                  </select></br></br>
-
                 <label for="city">City:</label>
                 <select id="city" name="city">
-                    <option value="">city</option>
+                    <option value=""></option>
                  </select></br></br>
-                <div style = "
+                <div id="button" style = "
                         border-radius: 65%;
                         border-background: black;
                         display: flex;
@@ -68,17 +67,21 @@
     <h1 style="padding-top: 30px;
     display: flex;
     justify-content: center">Table Data</h2>
-    <table style="font-family: arial, sans-serif;
+    <table id="myTableMain" style="font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;">
         <tr style="background-color:black;color:white;">
+            <th>Sr.No</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Age</th>
             <th>Gender</th>
             <th>Hobbies</th>
             <th>Country</th>
             <th>State</th>
             <th>City</th>
+            <th>Delete</th>
+            <th>Modify</th>
         </tr>
         <tbody id="myTable">
         </tbody>
@@ -86,6 +89,7 @@
     <script src="table.js"></script>
     <script src="state_city.js"></script>
     <script src="data_adding.js"></script>
+    <script src="edit_delete.js"></script>
 </body>
 </html>
 </body>
