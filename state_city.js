@@ -1,4 +1,3 @@
-
 const COUNTRY_STATE_CITY_DD = { 
     "india": {
       "gujarat": ["Surat", "Rajkot", "Jamnagar", "Vadodara"],
@@ -8,7 +7,7 @@ const COUNTRY_STATE_CITY_DD = {
     "usa": { 
       "texas": ["Austin", "SanAntonio", "Dallas", "Houston"],
       "chicago": ["Lyons", "ForestPark", "RiverForest", "Lincolnwood"],
-      "lasVegas": ["SpringValley", "Boulder", "Paradise", "Henderson"]
+      "lasvegas": ["SpringValley", "Boulder", "Paradise", "Henderson"]
     }
   };
 
