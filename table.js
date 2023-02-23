@@ -1,6 +1,9 @@
 const PERSONS_DD = [
-            {"name": "Harsh", "mail":"Hvwaghela@", "age":23, "gender":"male", "hobbies": ["Sports"], "country":"usa", "state":"gujarat", "city":"surat"}, 
-            {"name": "Harry", "mail":"Harrywaghela@", "age":50, "gender":"male", "hobbies": ["Sports", "Reading"], "country":"india", "state":"gujarat", "city":"surat"}
+            {"name": "Harsh Waghela", "mail":"Hvwaghela@gmail.com", "age":23, "gender":"male", "hobbies": ["Sports"], "country":"USA", "state":"LASVEGAS", "city":"BOULDER"}, 
+            {"name": "Harry Waghela", "mail":"Harrywaghela@gmail.com", "age":50, "gender":"male", "hobbies": ["Sports", "Reading"], "country":"INDIA", "state":"GUJARAT", "city":"SURAT"},
+            {"name": "Brad Google", "mail":"Brad22@gmail.com", "age":40, "gender":"female", "hobbies": ["Reading"], "country":"USA", "state":"CHICAGO", "city":"LYONS"},
+            {"name": "Alia Shake", "mail":"shake23@gmail.com", "age":32, "gender":"female", "hobbies": ["Sports", "Travelling"], "country":"INDIA", "state":"UP", "city":"KANPURS"},
+            {"name": "Meet Patel", "mail":"patel001@gmail.com", "age":27, "gender":"male", "hobbies": ["Sports", "Reading", "Travelling"], "country":"USA", "state":"CHICAGO", "city":"LYONS"}
         ]
  let table = document.getElementById("myTable");
  function addTableData(array, position){
